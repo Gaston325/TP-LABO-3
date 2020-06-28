@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NutritionTest</title>
+
+	<style>
+
+		body{
+
+			background: url(fondotest.jpg) no-repeat center center fixed;
+			-webkit-background-size:cover;
+ 			-moz-background-size:cover;
+ 			-o-background-size:cover;
+	  		background-size: cover;
+
+		}
+
+		#barra{
+			height: 42px;
+		}
+		a{
+			text-decoration: none;
+			color: #3498db;
+			display: block;
+		}
+
+
+		#nave{
+
+			list-style-type: none;	
+		}
+
+		.item_nave{
+			font-family: Sans-Serif;
+			font-size: 16px;
+			float: left;
+			margin-right: 5px;
+			width: 180px;
+			opacity: 90%;
+			text-align: center;
+			text-transform: inherit;
+			padding: 10px;
+			border-collapse: collapse;
+			-webkit-font-smoothing: antialiased;
+			border-radius: 21px;
+			border: 1px outset #18ab29;
+			
+		}
+		.item_nave:hover{
+
+			box-shadow: 1px 1px 5px #5cbf2a;
+			opacity: 100%;
+			cursor: pointer;
+		}
+
+		#datos_Usuario{
+			position: relative;
+			text-align: center;
+			bottom: 20px;
+		}
+
+		#formularioIngreso{
+			line-height: 50px;
+
+		}
+
+
+		h1{
+			font-family: inherit;
+    		font-weight: 600;
+ 		    font-size: 4rem;
+   			text-transform: inherit;
+   			font-weight: 100;
+   			margin-top: 110px;
+   			line-height: 55px;
+    		color: #3498db;
+    		border-collapse: collapse;
+  			border: 0;
+   			-webkit-font-smoothing: antialiased;
+   			
+		}
+
+		#ingresar_nom{
+			font-family: Sans-Serif;
+   			font-size: 28px;
+    		font-weight: 300;
+    		color: #BFB19A;
+
+		}
+
+		#nomUs{
+			 padding: 5px;
+   			 font-size: 16px;
+    		 border-width: 1px;
+   			 border-color: #18ab29;
+    		 background-color: #ffffff;
+   			 color: #000000;
+    		 border-style: inset;
+    		 border-radius: 6px;
+   			 box-shadow: -3px -1px 11px rgba(66,66,66,.75);
+   			 
+		}
+
+		#botonComenzar{
+
+			font-family: Sans-Serif;
+   			background-color: #3498db;
+			border-radius: 28px;
+			border: 1px solid #18ab29;
+			display :inline-block;
+			cursor: pointer;
+			color: #ffffff;
+			font-size: 17px;
+			padding: 16px 31px;
+			text-decoration: none;
+			text-shadow: 0px 1px 0px #2f6627;
+			outline: none;
+		}
+
+		#botonComenzar:hover {
+
+			background-color: #5cbf2a;
+
+		}
+
+		#botonComenzar:active {
+
+			position: relative;
+			top: 1px;
+			outline: none;
+			
+		}
+
+
+		.pregunta{
+			position: relative;
+			background: #BFB19A;
+			border-radius: 20px 20px 20px 20px;
+			-moz-border-radius: 20px 20px 20px 20px;
+			-webkit-border-radius: 20px 20px 20px 20px;
+			border: 0px solid #e319e3;
+			text-align: center;
+			width: 900px;
+			left: 200px;
+			height: 360px;
+			top: 100px;
+
+		}
+
+		.pregunta p {
+			color: #606060;
+  			font-family: Sans-Serif;
+   			font-weight: 600;
+   			line-height: 1.6em;
+   			font-size: 20px;
+
+		}
+		
+		.opciones{
+			position: relative;
+			text-align: left;
+			margin-left: 0px;
+			line-height: 30px;
+			display: block;
+			left: 100px;
+
+		}
+
+		.opcion {
+			font-size: 16px;
+   			font-weight: 300;
+  			line-height: 20px;
+  			font-family: sans-serif;
+  			display: inline-block;
+    		margin-right: 15px;
+    		cursor: pointer;
+  			
+		}
+		.radio_Opciones{
+			width: 1.2em;
+    		height: 1.2em;
+   			margin: 8px 3px 8px 3px;
+   			cursor: pointer;
+		}
+
+		.boton_Siguiente{
+			position: absolute;
+			top: 420px;
+			font-family: arial;
+			color: #fff;
+  			text-shadow: none;
+   			background-color: #0182A9;
+   			background-image: none;
+  			box-shadow: none;
+  			padding: 11px 19px;
+   			font-size: 17.5px;
+   			border: 1px solid #ccc;
+   			cursor: pointer;
+   			border-radius: 10px 10px 10px 10px;
+			-moz-border-radius: 10px 10px 10px 10px;
+			-webkit-border-radius: 10px 10px 10px 10px;
+			border: 0px solid #e319e3;
+			left: 600px;
+			outline: none;
+		}
+
+		.boton_Siguiente:hover{
+			color: #0182A9;
+			background-color: #fff;
+			border: 1px solid black;
+
+		}
+
+		.boton_Siguiente:active{
+			
+			outline: none;
+			color: red;
+
+		}
+
+
+		#contador{
+			color: white;
+			position: absolute;
+			top: 570px;
+			font-family: sans-serif;
+			border-radius: 5px 5px 5px 5px;
+			-moz-border-radius: 5px 5px 5px 5px;
+			-webkit-border-radius: 5px 5px 5px 5px;
+			border: 0px solid #e319e3;
+			background: #0182A9;
+			width: 110px;
+			text-align: center;
+			font-style: italic;
+			font-size: 16px;
+
+		}
+
+
+		#img6{
+			position: relative;
+			width: 260px;
+			right: 10px;
+			float: right;
+			border:solid;
+		}
+
+		#img8{
+			position: relative;
+			width: 240px;
+			right: 10px;
+			float: right;
+			border:solid;
+		}
+
+		.preguntaUlt{
+
+			position: relative;
+			background: #BFB19A;
+			border-radius: 20px 20px 20px 20px;
+			-moz-border-radius: 20px 20px 20px 20px;
+			-webkit-border-radius: 20px 20px 20px 20px;
+			border: 0px solid #e319e3;
+			text-align: center;
+			width: 1000px;
+			left: 200px;
+			height: 360px;
+			top: 100px;
+
+		}
+
+		.preguntaUlt p{
+
+			color: #606060;
+  			font-family: Sans-Serif;
+   			font-weight: 600;
+   			line-height: 1.6em;
+   			font-size: 20px;
+
+		}
+
+		.preguntaEtiqueta{
+
+			position: relative;
+			background: #BFB19A;
+			border-radius: 20px 20px 20px 20px;
+			-moz-border-radius: 20px 20px 20px 20px;
+			-webkit-border-radius: 20px 20px 20px 20px;
+			border: 0px solid #e319e3;
+			text-align: center;
+			width: 1000px;
+			left: 200px;
+			height: 450px;
+			top: 100px;
+
+		}
+
+		.preguntaEtiqueta p{
+
+			color: #606060;
+  			font-family: Sans-Serif;
+   			font-weight: 600;
+   			line-height: 1.6em;
+   			font-size: 20px;
+
+		}
+
+		.imgPregunta10{
+			width: 200px;
+			height: 150px;
+		}
+
+		#img1preg10{
+			position: absolute;
+			left: 100px;
+		}
+
+		#img2preg10{
+			position: absolute;
+			right: 100px;
+		}
+
+		#img3preg10{
+			position: absolute;
+			right: 350px;
+		}
+
+		#resultado_Finaltab{
+			position: absolute;
+			font-family: tahoma;
+			line-height: 40px;
+			font-size: 16px;
+			color: white;
+			border-bottom: solid 5px red;
+			border: 4px solid #636A6A;
+  			background-color: #555555;
+		}
+
+		#resultado_Final{
+			position: absolute;
+			width: 1000px;
+			font-size: 17px;
+
+		}
+
+		#textoResultado{
+			font-family: sans-serif;
+			color: #95a5a6;
+			font-size: 17px;
+
+		}
+
+		b{
+			font-family: sans-serif;
+			color: #16a085;
+		}
+	</style>
+
+
+
+
+
+</head>
+
+
+<body>
+
+	<div id="barra">
+		<nav>
+			<ul id="nave">
+				<li class="item_nave"><a href="Contacto.html">Contactenos </a> </li>
+				<li class="item_nave"><a href="Reportarerror.html">Reportar un error </a> </li>
+
+			</ul>
+		</nav>
+
+	</div>
+
+
+
+
+	<div id="datos_Usuario">
+	<h1>Antes de comenzar ingrese su nombre... </h1>
+ <br>
+	<form method="get" id="formularioIngreso">
+		
+		
+		<input type="text" id="nomUs" placeholder="Nombre..." name="nom">
+		<br>
+		<input type="button" id="botonComenzar" value="COMENZAR"/>
+
+	</form>
+
+	<div id="errorNom" style="color: red;"> </div>
+
+	<img src="logo.png" alt="imagenLogo">
+
+	</div>
+
+	<form class="pregunta" id="pregunta1" >
+
+		<p>¿Cuantos litros de agua se deben tomar al día para satisfacer el requerimiento mínimo y mantenerse saludable?</p>
+
+		<div class="opciones">
+		<input type="radio" name="opcionLitros" id="L3" value="3" class="radio_Opciones" />
+		<label class="opcion" for="L3">3 Litros al dia</label>
+		<br>
+		<input type="radio" name="opcionLitros" id="L1" value="1" class="radio_Opciones" />
+		<label class="opcion" for="L1">1 Litro al dia</label>
+		<br>
+		<input type="radio" name="opcionLitros" id="L0,5" value="0,5" class="radio_Opciones" />
+		<label class="opcion" for="L0,5">0,5 Litros al dia</label>
+		<br>
+		<input type="radio" name="opcionLitros" id="L2" value="2" class="radio_Opciones" />
+		<label class="opcion" for="L2">Casi 2 Litros al dia</label>
+		</div>
+
+		
+		
+	</form>
+
+	<form class="pregunta" id="pregunta2" >
+
+		<p>¿Hasta qué edad es necesario beber leche para reforzar los huesos?</p>
+
+		<div class="opciones">
+		<input type="radio" name="opcionLeche" id="Leche1" value="le1" class="radio_Opciones" />
+		<label class="opcion" for="Leche1">Solo hasta los 12 años</label>
+		<br>
+		<input type="radio" name="opcionLeche" id="Leche2" value="le2" class="radio_Opciones" />
+		<label class="opcion" for="Leche2">Toda la vida en diferentes proporicones</label>
+		<br>
+		<input type="radio" name="opcionLeche" id="Leche3" value="le3" class="radio_Opciones" />
+		<label class="opcion" for="Leche3">Hasta los 25 años inclusive</label>
+		<br>
+		<input type="radio" name="opcionLeche" id="Leche4" value="le4" class="radio_Opciones" />
+		<label class="opcion" for="Leche4">Hasta los 25 años y despues de los 70 años</label>
+		<br>
+		<br>
+		
+		</div>
+
+		
+		
+	</form>
+
+	<form class="pregunta" id="pregunta3" >
+
+		<p>¿Cuál es la manera más sana y efectiva de lograr una pérdida de peso y grasa corporal?</p>
+
+		<div class="opciones">
+		<input type="radio" name="opcionDieta" id="Dieta1" value="die1" class="radio_Opciones" />
+		<label class="opcion" for="Dieta1">Evitando todo consumo de grasas y alimentos altos en azucares</label>
+		<br>
+		<input type="radio" name="opcionDieta" id="Dieta2" value="die2" class="radio_Opciones" />
+		<label class="opcion" for="Dieta2">Evitando en gran medida el consumo de carbohidrtos y azucares</label>
+		<br>
+		<input type="radio" name="opcionDieta" id="Dieta3" value="die3" class="radio_Opciones" />
+		<label class="opcion" for="Dieta3">Consumiendo alimentos de categoria light</label>
+		<br>
+		<input type="radio" name="opcionDieta" id="Dieta4" value="die4" class="radio_Opciones" />
+		<label class="opcion" for="Dieta4">Llevando una dieta hipocalórica donde no se pone en riesgo el cuerpo y así evitando los bruscos cambios</label>
+		<br>
+		
+		
+		</div>
+
+		
+		
+	</form>
+
+
+	<form class="pregunta" id="pregunta4" >
+
+		<p>¿Cual seria el desayuno que recomendarias a un adolecente de 16 años?</p>
+
+		<div class="opciones">
+		<input type="radio" name="opcionDesayuno" id="Desayuno1" value="des1" class="radio_Opciones" />
+		<label class="opcion" for="Desayuno1">🥐🥨🧉</label>
+		<br>
+		<input type="radio" name="opcionDesayuno" id="Desayuno2" value="des2" class="radio_Opciones" />
+		<label class="opcion" for="Desayuno2">🍰🍮🥛</label>
+		<br>
+		<input type="radio" name="opcionDesayuno" id="Desayuno3" value="des3" class="radio_Opciones" />
+		<label class="opcion" for="Desayuno3">🍎🧃🍐</label>
+		<br>
+		<input type="radio" name="opcionDesayuno" id="Desayuno4" value="des4" class="radio_Opciones" />
+		<label class="opcion" for="Desayuno4">🍊🍳🧀</label>
+		<br>
+		
+		
+		</div>
+
+		
+		
+	</form>
+
+	<form class="pregunta" id="pregunta5" >
+
+		<p>¿Cuales de las siguientes opciones seria considerada una "regla de oro" para la alimentacion equilibrada?</p>
+
+		<div class="opciones">
+		<input type="radio" name="opcionReglaOro" id="Regla1" value="reg1" class="radio_Opciones" />
+		<label class="opcion" for="Regla1">Comer despacio y masticar bien</label>
+		<br>
+		<input type="radio" name="opcionReglaOro" id="Regla2" value="reg2" class="radio_Opciones" />
+		<label class="opcion" for="Regla2">Mantener el peso estable como signo de equilibrio nutritivo</label>
+		<br>
+		<input type="radio" name="opcionReglaOro" id="Regla3" value="reg3" class="radio_Opciones" />
+		<label class="opcion" for="Regla3">Limpiar el consumo de azucares dañinas</label>
+		<br>
+		<input type="radio" name="opcionReglaOro" id="Regla4" value="reg4" class="radio_Opciones" />
+		<label class="opcion" for="Regla4">Todas son correctas</label>
+		<br>
+		
+		
+		</div>
+
+		
+		
+	</form>
+
+
+
+		<form class="pregunta" id="pregunta6" >
+
+		<p>Segun la siguiente imagen indicar en orden 1 , 2 , 3... a que tipo de cuerpo pertenece cada uno... </p>
+		<img id="img6" alt="Imagen" src="Pregunta6.jpg">
+
+		<div class="opciones">
+		<input type="radio" name="opcionCuerpo" id="Cuerpo1" value="cuerp1" class="radio_Opciones" />
+		<label class="opcion" for="Cuerpo1">1- Endomorfo 2- Ectomorfo 3- Mesomorfo</label>
+		<br>
+		<input type="radio" name="opcionCuerpo" id="Cuerpo2" value="cuerp2" class="radio_Opciones" />
+		<label class="opcion" for="Cuerpo2">1- Ectomorfo 2- Mesomorfo 3- Endomorfo</label>
+		<br>
+		<input type="radio" name="opcionCuerpo" id="Cuerpo3" value="cuerp3" class="radio_Opciones" />
+		<label class="opcion" for="Cuerpo3">1- Endomorfo 2- Mesomorfo 3- Ectomorfo</label>
+		<br>
+		<input type="radio" name="opcionCuerpo" id="Cuerpo4" value="cuerp4" class="radio_Opciones" />
+		<label class="opcion" for="Cuerpo4">1- Ectomorfo 2- Endomorfo 3- Mesomorfo</label>
+		<br>
+		
+		
+		</div>
+
+		
+		
+		</form>
+
+		<form class="preguntaUlt" id="pregunta7" >
+
+		<p>Manuel es un joven de 17 años que pesa unos 58 kilogramos y tiene un estatura en cm de 1.80 metros , determinar para Manuel cual es el IMC (Indice de Masa Corporal) e indicar en que clasificacion de peso se encuentra.</p>
+
+		<div class="opciones">
+
+		<label for="imc">IMC:</label>
+		<input type="number" placeholder="Ej:29.4" id="imc">
+
+		<br>
+		<label for="califiaccionimc">Clasificacion:</label>
+		<select name="calificacionIMC" id="califiaccionimc">
+			<option >---</option>
+			<option id="correctaCalificacion">Peso insuficiente</option>
+			<option >Normopeso</option>
+			<option >Sobrepeso grado I</option>
+			<option >Sobrepeso grado II</option>
+		</select>
+		
+		</div>
+
+		
+		
+		</form>
+
+
+		<form class="preguntaEtiqueta" id="pregunta8" >
+
+		<p>Segun la siguiente etiqueta que contiene informacion nutricional de una Leche completar los campos con las porporciones nutricionales segun 1 porcion (240ml) correctas. </p>
+
+		<img id="img8" alt="Imagen" src="etiquetapregunta8.png">
+
+		<div class="opciones">
+
+		<label for="calorias">Calorias contenidas:</label>
+		<select  id="calorias">
+			<option >---</option>
+			<option >60 kcla</option>
+			<option >240 kcla</option>
+			<option >4,5 kcla</option>
+			<option id="correctaEtiqueta1">140 kcla</option>
+		</select>
+		<br>
+		<label for="grasasTrans">Grasas trans contenidas:</label>
+		<select  id="grasasTrans">
+			<option >---</option>
+			<option >5 g</option>
+			<option id="correctaEtiqueta2">0 g</option>
+			<option >7 g</option>
+			<option >4,5 g</option>
+		</select>
+		<br>
+		<label for="sodio">Contenido de sodio:</label>
+		<select  id="sodio">
+			<option >---</option>
+			<option >25 mg</option>
+			<option >80 mg</option>
+			<option >1500 mg</option>
+			<option id="correctaEtiqueta3">150 mg</option>
+		</select>
+		<br>
+		<label for="proteinas">Contenido de proteinas:</label>
+		<select  id="proteinas">
+			<option >---</option>
+			<option id="correctaEtiqueta4">7 g</option>
+			<option >14 g</option>
+			<option >11 g</option>
+			<option >1 g</option>
+		</select>
+		<br>
+		<label for="grasasSaturadas">Grasas saturadas:</label>
+		<select  id="grasasSaturadas">
+			<option >---</option>
+			<option id="correctaEtiqueta5">4,5 g</option>
+			<option >7 g</option>
+			<option >0 g</option>
+			<option >23 g</option>
+		</select>
+
+		
+		</div>
+
+		
+		
+		</form>
+
+		<form class="pregunta" id="pregunta9" >
+
+		<p>Indicar cuales de las siguiente afirmaciones son verdaderas con un Tick ✔</p>
+
+		<div class="opciones">
+		<input type="checkbox" name="opcionAfirmacion" id="afirmacion1" value="afir1" class="radio_Opciones" />
+		<label class="opcion" for="afirmacion1">"La diabetes es una enfermedad en la que los niveles de sodio de la sangre están muy altos"</label>
+		<br>
+		<input type="checkbox" name="opcionAfirmacion" id="afirmacion2" value="afir2" class="radio_Opciones" />
+		<label class="opcion" for="afirmacion2">"La anorexia es un trastorno de la alimentación que se caracteriza por el peso corporal anormalmente bajo"</label>
+		<br>
+		<input type="checkbox" name="opcionAfirmacion" id="afirmacion3" value="afir3" class="radio_Opciones" />
+		<label class="opcion" for="afirmacion3">"La tensión arterial es la fuerza que ejerce la sangre contra las paredes de los vasos (arterias)"</label>
+		<br>
+		<input type="checkbox" name="opcionAfirmacion" id="afirmacion4" value="afir4" class="radio_Opciones" />
+		<label class="opcion" for="afirmacion4">"La principal función de los glúcidos es aportar energía al organismo"</label>
+		<br>
+		<input type="checkbox" name="opcionAfirmacion" id="afirmacion5" value="afir5" class="radio_Opciones" />
+		<label class="opcion" for="afirmacion5">"Las proteínas son los materiales que desempeñan un menor número de funciones en las células"</label>
+		<br>
+		<input type="checkbox" name="opcionAfirmacion" id="afirmacion6" value="afir6" class="radio_Opciones" />
+		<label class="opcion" for="afirmacion6">"El agua es el componente principal de los seres vivos"</label>
+		
+		</div>
+
+		
+		
+	</form>
+
+	<form class="pregunta" id="pregunta10" >
+
+		<p>Nombrar adecuadamente los siguiente organos que conforman el sistema digestivo del ser humano...</p>
+
+		<div id="img1preg10">
+		<label for="estomagoPreg"><img class="imgPregunta10" alt="Imagen" src="estomago.jpg"></label>
+		<br>
+		<select  id="estomagoPreg">
+			<option >---</option>
+			<option >Intestino Grueso</option>
+			<option id="organoCorrecta1">Estómago</option>
+			<option >Riñón</option>
+		</select>
+		<br>
+		</div>
+
+		<div id="img2preg10">
+		<label for="higadoPreg"><img class="imgPregunta10" alt="Imagen" src="higado.jpg"></label>
+		<br>
+		<select  id="higadoPreg">
+			<option >---</option>
+			<option id="organoCorrecta2">Hígado</option>
+			<option >Esófago</option>
+			<option >Páncreas</option>
+		</select>
+		<br>
+		</div>
+
+		<div id="img3preg10">
+		<label for="pancreasPreg"><img class="imgPregunta10" alt="Imagen" src="pancreas.jpg"></label>
+		<br>
+		<select  id="pancreasPreg">
+
+			<option >---</option>
+			<option >Musculo renal</option>
+			<option >Hígado</option>
+			<option id="organoCorrecta3">Páncreas</option>
+		</select>
+		<br>
+		</div>
+		
+		
+
+		
+		
+	</form>
+
+
+	<button type="button" class="boton_Siguiente" id="boton_Siguiente">SIGUIENTE ></button>
+
+	<div id="contador">
+	<p>Pregunta numero</p>
+	<div id="contador_Pregunta">0</div>
+	</div>
+
+
+<div id="resultado_Final">
+
+	
+		<div id="textoResultado">
+
+		<h2>Resultado de su test de nutrición</h2>
+
+		<p><b id="resultado_Nom"></b> has contestado correctamente a <b id="Nota"></b> de 10 preguntas  </p>
+
+		<p>Por lo tanto tiene una nota <b id="nota_Palabra"></b> y promedio de <b id="Promedio"></b> contestadas correctamente</p>
+
+		</div>
+
+		<button id="ver_Resultados">Ver Resultados</button>
+		<button id="ocultar_Resultados">Ocultar Resultados</button>
+
+<table id="resultado_Finaltab">
+
+		<tr>
+			<td>Pregunta 1</td>
+			<td id="td1"></td>
+			<td>("¿Cuantos litros de agua se deben tomar al día para satisfacer el requerimiento mínimo y mantenerse saludable?")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 2</td>
+			<td id="td2"></td>
+			<td>("¿Hasta qué edad es necesario beber leche para reforzar los huesos?")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 3</td>
+			<td id="td3"></td>
+			<td>("¿Cuál es la manera más sana y efectiva de lograr una pérdida de peso y grasa corporal?")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 4</td>
+			<td id="td4"></td>
+			<td>("¿Cual seria el desayuno que recomendarias a un adolecente de 16 años?")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 5</td>
+			<td id="td5"></td>
+			<td>("¿Cuales de las siguientes opciones seria considerada una "regla de oro" para la alimentacion equilibrada?")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 6</td>
+			<td id="td6"></td>
+			<td>("Segun la siguiente imagen indicar en orden 1 , 2 , 3... a que tipo de cuerpo pertenece cada uno...")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 7</td>
+			<td id="td7"></td>
+			<td>("Manuel es un joven de 17 años que pesa unos 58 kilogramos ... calcular IMC")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 8</td>
+			<td id="td8"></td>
+			<td>("Segun la siguiente etiqueta que contiene informacion nutricional ... completar")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 9</td>
+			<td id="td9"></td>
+			<td>("Indicar cuales de las siguiente afirmaciones son verdaderas con un Tick ✔")</td>
+		</tr>
+		<tr>
+			<td>Pregunta 10</td>
+			<td id="td10"></td>
+			<td>("Nombrar adecuadamente los siguiente organos que conforman el sistema digestivo del ser humano...")</td>
+		</tr>
+	</table>
+
+</div>
+
+	
+
+
+
+
+
+	<script>
+	
+	"use strict"
+
+	function esconderPreguntas(){
+	document.getElementById("boton_Siguiente").style.display = "none";
+	document.getElementById("contador").style.display = "none";
+	document.getElementById("pregunta1").style.display ="none";
+	document.getElementById("pregunta2").style.display = "none";
+	document.getElementById("pregunta3").style.display = "none";
+	document.getElementById("pregunta4").style.display ="none";
+	document.getElementById("pregunta5").style.display ="none";
+	document.getElementById("pregunta6").style.display ="none";
+	document.getElementById("pregunta7").style.display ="none";
+	document.getElementById("pregunta8").style.display ="none";
+	document.getElementById("pregunta9").style.display ="none";
+	document.getElementById("pregunta10").style.display ="none";
+	document.getElementById("")
+}
+
+function Inicializador(){
+
+	esconderPreguntas();
+	document.getElementById("resultado_Final").style.display = "none";
+	document.getElementById("resultado_Finaltab").style.display = "none";
+
+}
+
+function sumarPunto(){
+
+	resultado_Final = resultado_Final + 1;
+	
+
+}
+
+function sacarPromedio()
+{
+
+	var totalProm;
+
+	totalProm = (resultado_Final / 10) * 100;
+
+	document.getElementById("Promedio").innerHTML = (totalProm + "%");
+
+}
+
+function devolverNota(){
+
+	sacarPromedio();
+	document.getElementById("Nota").innerHTML =  resultado_Final;
+
+	var notaSacada = resultado_Final;
+
+	document.getElementById("resultado_Nom").innerHTML = nomUsJs;
+
+	if (notaSacada <= 4) { document.getElementById("nota_Palabra").innerHTML = "Mala"; return;}
+
+	if (notaSacada <= 6) { document.getElementById("nota_Palabra").innerHTML = "Regular"; return;}
+
+	if (notaSacada <= 8) { document.getElementById("nota_Palabra").innerHTML = "Buena"; return;}
+
+	if (notaSacada <= 10) { document.getElementById("nota_Palabra").innerHTML = "Muy buena"; return;}
+
+
+
+}
+
+
+	Inicializador();
+
+	
+
+	var resultado_Final = 0;
+	var nomUsJs;
+
+	var datosUsuario = document.getElementById("datos_Usuario");	
+	
+
+	document.getElementById("nomUs").onclick = function() {document.getElementById("errorNom").innerHTML = " ";}
+
+	var botonComenzar = document.getElementById("botonComenzar");
+	botonComenzar.onclick = function(){
+
+		nomUsJs = document.getElementById("nomUs").value;
+
+
+		if(nomUsJs < 1){
+		
+			document.getElementById("errorNom").innerHTML = "El nombre no puede estar en blanco";
+			return;
+		}
+		else{
+
+			datosUsuario.style.display = "none";
+			document.getElementById("barra").style.display="none";
+			document.getElementById("pregunta1").style.display ="inline-block";
+			document.getElementById("boton_Siguiente").style.display ="inline-block";
+			document.getElementById("contador").style.display = "block";
+			document.getElementById("contador_Pregunta").innerHTML = "1";
+			return;
+
+
+		} 
+		// END PRIMER CLICK COMENZAR BUTTON
+
+
+	}
+
+
+		var boton_Siguiente = document.getElementById("boton_Siguiente");
+		boton_Siguiente.onclick = function(){
+
+		
+
+		var pregunta = document.getElementById("contador_Pregunta").innerHTML;
+
+		
+		switch(pregunta)
+{
+	case "1" :
+	{
+		if (document.getElementById("L2").checked){
+			document.getElementById("td1").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "2" ;
+			document.getElementById("pregunta1").style.display = "none";
+			sumarPunto();
+			
+		   }
+
+		else{
+			
+			document.getElementById("td1").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "2" ;
+			document.getElementById("pregunta1").style.display = "none";
+			
+			
+		  }
+
+		  document.getElementById("pregunta2").style.display = "inline-block";
+		  break;
+	}
+
+	case "2" :
+
+	{
+		
+		if (document.getElementById("Leche2").checked){
+			document.getElementById("td2").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "3" ;
+			document.getElementById("pregunta2").style.display = "none";
+			sumarPunto();
+			
+		   }
+
+		else{
+
+			document.getElementById("td2").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "3" ;
+			document.getElementById("pregunta2").style.display = "none";
+			
+
+		  }
+
+		  document.getElementById("pregunta3").style.display = "inline-block";
+		  break;
+	}
+
+	case "3" :
+	{
+		if (document.getElementById("Dieta4").checked){
+			document.getElementById("td3").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "4" ;
+			document.getElementById("pregunta3").style.display = "none";
+			sumarPunto();
+			
+		   }
+
+		else{
+
+			document.getElementById("td3").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "4" ;
+			document.getElementById("pregunta3").style.display = "none";
+			
+
+		  }
+
+		  document.getElementById("pregunta4").style.display = "inline-block";
+		  break;
+		
+
+
+	}
+
+	case "4" :
+	{
+		if (document.getElementById("Desayuno3").checked){
+			document.getElementById("td4").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "5" ;
+			document.getElementById("pregunta4").style.display = "none";
+			sumarPunto();
+
+		   }
+
+		else{
+
+			document.getElementById("td4").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "5" ;
+			document.getElementById("pregunta4").style.display = "none";
+			
+		  }
+
+		  document.getElementById("pregunta5").style.display = "inline-block";
+		  break;
+
+
+	}
+
+	case "5" :
+	{
+		if (document.getElementById("Regla4").checked){
+			document.getElementById("td5").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "6" ;
+			document.getElementById("pregunta5").style.display = "none";
+			sumarPunto();
+
+			
+		   }
+
+		else{
+
+			document.getElementById("td5").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "6" ;
+			document.getElementById("pregunta5").style.display = "none";
+			
+
+		  }
+
+		  document.getElementById("pregunta6").style.display = "inline-block";
+		  break;
+
+
+	}
+
+	case "6":
+	{
+		if (document.getElementById("Cuerpo2").checked){
+			document.getElementById("td6").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "7" ;
+			document.getElementById("pregunta6").style.display = "none";
+			sumarPunto();
+
+		   }
+
+		else{
+
+			document.getElementById("td6").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "7" ;
+			document.getElementById("pregunta6").style.display = "none";
+
+		  }
+
+		  document.getElementById("pregunta7").style.display = "inline-block";
+		  break;
+
+
+	}
+
+	case "7":
+	{
+		if (document.getElementById("imc").value == 17.9 && document.getElementById("correctaCalificacion").selected == true){
+			document.getElementById("td7").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "8" ;
+			document.getElementById("pregunta7").style.display = "none";
+			sumarPunto();
+
+		   }
+
+		else{
+
+			document.getElementById("td7").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "8" ;
+			document.getElementById("pregunta7").style.display = "none";
+			
+		  }
+
+		  document.getElementById("pregunta8").style.display = "inline-block";
+		  break;
+
+
+	}
+
+	case "8":
+	{
+		var correc1 = document.getElementById("correctaEtiqueta1").selected;
+		var correc2 = document.getElementById("correctaEtiqueta2").selected;
+		var correc3 = document.getElementById("correctaEtiqueta3").selected;
+		var correc4 = document.getElementById("correctaEtiqueta4").selected;
+		var correc5 = document.getElementById("correctaEtiqueta5").selected;
+
+
+		if (correc1 == true && correc2 == true && correc3 == true && correc4 == true && correc5 == true){
+			document.getElementById("td8").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "9" ;
+			document.getElementById("pregunta8").style.display = "none";
+			sumarPunto();
+
+			
+		   }
+
+		else{
+
+			document.getElementById("td8").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "9" ;
+			document.getElementById("pregunta8").style.display = "none";
+
+
+		  }
+
+		  document.getElementById("pregunta9").style.display = "inline-block";
+		  break;
+
+
+	}
+
+	case "9":
+	{
+		var correc1 = document.getElementById("afirmacion2").checked;
+		var correc2 = document.getElementById("afirmacion3").checked;
+		var correc3 = document.getElementById("afirmacion4").checked;
+		var correc4 = document.getElementById("afirmacion6").checked;
+
+
+		if (correc1 == true && correc2 == true && correc3 == true && correc4 == true){
+			document.getElementById("td9").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "10" ;
+			document.getElementById("pregunta9").style.display = "none";
+			sumarPunto();
+			
+		   }
+
+		else{
+
+			document.getElementById("td9").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "10" ;
+			document.getElementById("pregunta9").style.display = "none";
+
+		  }
+
+		  document.getElementById("pregunta10").style.display = "inline-block";
+		  break;
+
+
+	}
+
+	case "10":
+	{
+		var correc1 = document.getElementById("organoCorrecta1").selected;
+		var correc2 = document.getElementById("organoCorrecta2").selected;
+		var correc3 = document.getElementById("organoCorrecta3").selected;
+		
+
+
+		if (correc1 == true && correc2 == true && correc3 == true){
+			document.getElementById("td10").innerHTML = "✅";
+			document.getElementById("contador_Pregunta").innerHTML = "10" ;
+			sumarPunto();
+
+			
+		   }
+
+		else{
+
+			document.getElementById("td10").innerHTML =  "❌"
+			document.getElementById("contador_Pregunta").innerHTML = "10" ;
+			
+
+		  }
+
+		  document.getElementById("resultado_Final").style.display = "block";
+		  esconderPreguntas();
+		  devolverNota();
+		  break;
+
+
+	}
+
+}
+
+
+
+
+
+
+
+}
+
+	var boton_verResultado = document.getElementById("ver_Resultados");
+		boton_verResultado.onclick = function(){
+
+			document.getElementById("resultado_Finaltab").style.display = "block";
+
+
+		}
+
+	var boton_ocultarResultado = document.getElementById("ocultar_Resultados");
+		boton_ocultarResultado.onclick = function(){
+
+			document.getElementById("resultado_Finaltab").style.display = "none";
+
+
+		}
+	
+
+
+
+	
+	</script>
+
+
+
+</body>
+
+</html>

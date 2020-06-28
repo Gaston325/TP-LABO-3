@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Reportar un error - ES</title>
+	<style>
+		body{
+			background: url(fondoerror.jpg) no-repeat center center fixed;
+		-webkit-background-size:cover;
+ 		-moz-background-size:cover;
+ 		-o-background-size:cover;
+	  	background-size: cover;
+		}
+
+		h1{
+			font-family: "Wire One", sans-serif;
+			text-align: center;
+			font-size: 60px;;
+			color: #C6B182;
+		  }
+
+		p{
+			text-align: center;
+			font-family: calibri;
+			font-size: 25px;
+			color: #C5BBA5;
+
+		}  
+
+		#reporte{
+			
+			text-align: center;
+			margin-right: auto;
+			margin-left: auto;
+			display: block;
+			width: 289px;
+			font-family: candara;
+			color: #C5BBA5;
+
+		}
+
+	
+
+		#logo {
+			position: absolute;
+			width: 150px;
+			height: 150px;
+			top: 540px;
+			opacity: 75%;
+		}
+		#logo:hover{
+
+			opacity: 100%;
+		}
+
+		footer{
+			position: absolute;
+			font-family: "Courier New", Courier, monospace;
+			color: #A8AAAD;
+			top: 620px;
+			right: 10px;
+			opacity: 35%;
+			font-size: 13px;
+
+		}
+
+
+	</style>
+
+</head>
+
+<body>
+
+	
+
+
+	<h1>REPORTAR ERROR EN EL SITIO WEB</h1>
+	<p>Envia una sugerencia o reporta un error para que podamos seguir mejorando nuestro sitio </p>
+
+	<form action="ejemplo.php" method="get" id="reporte">
+		<label for="error">Tipo de error</label>
+		<select name="problem" id="error">
+			<option value="bug error" selected>Bug / Errores al ejecutar el test</option>
+			<option value="desinfo">Desinformacion</option>
+			<option value="reco">Recomendacion</option>
+			<option value="otro">Otro</option>
+		</select>
+<br>
+<br>
+		<label for="queja">Cuentenos su inconveniente/recomendacion: </label>
+<br>
+		<textarea id="queja" name="desc" rows="8" cols="38" maxlength="300"></textarea>
+<br>
+<br>
+		<input type="button" id="boton" value="Enviar Reporte" />
+
+		<div id="caja"></div>
+
+</form>
+
+<a href="Test.html"><img id="logo" src="logo.png"></a>
+
+<footer>Copyright © 2019-2020 Nutritiontest </footer>
+
+		<script>
+			
+			"use strict"
+
+			var boton = document.getElementById("boton");
+			boton.onclick = function(){
+
+				var desc = document.getElementById("queja").value;
+
+				if (desc == "") {
+					document.getElementById("caja").innerHTML = ("Porfavor describa su error !");
+					document.getElementById("caja").style.color = "red";
+					return false;
+				}
+				
+				if(desc != "")
+				{
+					
+					document.getElementById("caja").style.color = "green";
+					document.getElementById("caja").innerHTML = ("Reporte enviado con exito ! Gracias");
+				}
+
+
+
+			}
+
+
+		</script>
+
+
+
+	
+
+</body>
+
+</html>
